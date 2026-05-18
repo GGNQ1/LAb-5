@@ -1,100 +1,101 @@
-const canvas = document.getElementById("tela");
-const ctx = canvas.getContext("2d");
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
 
+// casa
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'brown';
+ctx.fillRect(130, 150, 130, 110) ;
+ctx.closePath();
 
+//chão
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'gray';
+ctx.fillRect(0,260,400,300)
+ctx.closePath();
 
-function desenhar_quadrado(x, y, largura, altura, cor) {
-  ctx.fillStyle = cor;
-  ctx.fillRect(x, y, largura, altura);
-}
+//árvore esquerda baixo
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'brown';
+ctx.fillRect(50, 200, 20, 60)
 
+//árvore direita baixo
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'brown';
+ctx.fillRect(350, 270, 20, 60)
 
+//vidro casa esquerdo
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'lightblue'
+ctx.fillRect(140, 170, 35, 35)
 
-function desenhar_linha(x1, y1, x2, y2, cor, largura = 2) {
-  ctx.beginPath();
-  ctx.strokeStyle = cor;
-  ctx.lineWidth = largura;
-  ctx.moveTo(x1, y1);
-  ctx.lineTo(x2, y2);
-  ctx.stroke();
-}
+//vidro casa direito
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'lightblue'
+ctx.fillRect(210, 170, 35, 35)
 
+// porta casa 
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'maroon';
+ctx.fillRect(178, 210, 30, 50);
 
+// árvore esquerda cima 
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'green';
+ctx.arc(60,180,30,0*Math.PI,2.5*Math.PI);
+ctx.fill();
 
-function desenhar_arco(x, y, raio, cor) {
-  ctx.beginPath();
-  ctx.fillStyle = cor;
-  ctx.arc(x, y, raio, 0, Math.PI * 2);
-  ctx.fill();
-}
+// árvore direita cima 
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'green';
+ctx.arc(360,250,30,0*Math.PI,2.5*Math.PI);
+ctx.fill();
 
+//sol
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'yellow';
+ctx.arc(320,80,50,0*Math.PI,2.5*Math.PI);
+ctx.fill();
 
+// telhado 
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'coral';
+ctx.moveTo(130,150);
+ctx.lineTo(130+65,150-65);
+ctx.lineTo(130+65+65,150-65+65);
+ctx.fill();
+ctx.closePath();
 
-function escrever(texto, x, y, cor = "black") {
-  ctx.fillStyle = cor;
-  ctx.font = "16px Arial";
-  ctx.fillText(texto, x, y);
-}
+//cachoeira
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'blue';
+ctx.arc(0,270,50,0*Math.PI,2.5*Math.PI);
+ctx.fill();
+//ctx.arc(0,270,50,1.5*Math.PI,2.5*Math.PI);
 
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'blue';
+ctx.arc(180,390,50,0*Math.PI,2.5*Math.PI);
+ctx.fill();
 
-function desenhar_cena() {
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'blue';
+ctx.fillRect(0, 345, 190, 100)
 
-  
-  desenhar_quadrado(0, 0, 300, 200, "#c8f3ee");
-
-  
-  desenhar_quadrado(0, 200, 300, 100, "#d3d3d3");
-
-  
-  desenhar_arco(240, 60, 30, "yellow");
-
-  
-  ctx.beginPath();
-  ctx.fillStyle = "#6ec5e9";
-  ctx.arc(0, 300, 80, 0, Math.PI * 2);
-  ctx.fill();
-
-  function desenhar_arco(x, y, raio, cor) {
-  ctx.beginPath();
-  ctx.fillStyle = cor;
-  ctx.arc(x, y, raio, 0, Math.PI * 2);
-  ctx.fill();
-
-}
-
-
-  
-  desenhar_quadrado(110, 130, 80, 70, "#8b5a2b");
-
-  
-desenhar_quadrado(140, 160, 20, 40, "#5c3a21");
-
-
-desenhar_arco(155, 180, 2, "black");
-
-  
-  ctx.beginPath();
-  ctx.fillStyle = "#d97b5c";
-  ctx.moveTo(110, 130);
-  ctx.lineTo(150, 90);
-  ctx.lineTo(190, 130);
-  ctx.closePath();
-  ctx.fill();
-
-  
-  desenhar_quadrado(120, 145, 20, 20, "#87ceeb");
-  desenhar_quadrado(160, 145, 20, 20, "#87ceeb");
-
-  
-  desenhar_quadrado(40, 160, 10, 40, "#8b5a2b");
-  desenhar_arco(45, 160, 20, "green");
-
-  
-  desenhar_quadrado(250, 210, 10, 40, "#8b5a2b");
-  desenhar_arco(255, 200, 20, "green");
-
-}
-
-
-// chama tudo
-desenhar_cena();
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.fillStyle = 'blue';
+ctx.fillRect(0,250, 45, 200)
